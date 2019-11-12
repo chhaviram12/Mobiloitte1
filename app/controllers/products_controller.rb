@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    
+
     @phones = Phone.all
+    @watches = Watch.all
+    @laptops = Laptop.all
   end
 
   # GET /products/1

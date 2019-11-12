@@ -9,6 +9,9 @@
       <th>Description</th>
       <th>Image</th>
       <th>Date</th>
+      <th>Edit</th>
+      <th>Show</th>
+      <th>Delete</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +23,9 @@
         <td><%= phone.pmodel %></td>
          <td><%= image_tag phone.image_url, width: '20%' if phone.image.present? %></td>
         <td><%= phone.dat %></td>
+         <td><%= link_to 'View', phone %></td>
+        <td><%= link_to 'Update', edit_phone_path(phone) %></td>
+        <td><%= link_to 'Delete', phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
      <% end %>
 
@@ -31,13 +37,35 @@
                <td><%= image_tag product.image_url, width: '20%' if product.image.present? %></td>
 
         <td><%= product.dat %></td>
-        <!-- <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to 'View', product %></td>
+        <td><%= link_to 'Update', edit_product_path(product) %></td>
+        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
       </tr>
       <%end%>
-  
-   
+      <% @watches.each do |watch| %>
+      <tr>
+        <td><%= watch.company %></td>
+        <td><%= watch.wmodel %></td>
+           <td><%= image_tag watch.image_url, width: '20%' if watch.image.present? %></td>
+
+        <td><%= watch.dat %></td>
+
+         <td><%= link_to 'View', watch %></td>
+        <td><%= link_to 'Update', edit_watch_path(watch) %></td>
+        <td><%= link_to 'Delete', watch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+      <%end%>
+       <% @laptops.each do |laptop| %>
+      <tr>
+        <td><%= laptop.company %></td>
+        <td><%= laptop.processor %></td>
+       <td><%= image_tag laptop.image_url, width: '20%' if laptop.image.present? %></td>
+        <td><%= laptop.dat %></td>
+        <td><%= link_to 'View', laptop %></td>
+        <td><%= link_to 'Update', edit_laptop_path(laptop) %></td>
+        <td><%= link_to 'Delete', laptop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+      <%end%>
   </tbody>
 </table>
 
