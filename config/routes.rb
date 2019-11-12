@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :products
-  root 'products#index'
+  #root 'products#index'
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
