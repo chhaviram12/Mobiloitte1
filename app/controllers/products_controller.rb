@@ -1,6 +1,17 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   
+
+  before_action :check
+
+  def check
+    if current_user.present?
+      # redirect_to laptops_path
+    else 
+      redirect_to root_url
+  end
+end
+
   # GET /products
   # GET /products.json
   def index

@@ -1,6 +1,15 @@
 class LaptopsController < ApplicationController
   before_action :set_laptop, only: [:show, :edit, :update, :destroy]
+  
+  before_action :check
 
+  def check
+    if current_user.present?
+      # redirect_to laptops_path
+    else 
+      redirect_to root_url
+  end
+end
   # GET /laptops
   # GET /laptops.json
   def index
