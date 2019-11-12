@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,14 +37,22 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
     
-
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">HOME</a>
+        </li>
+      </ul>
+    
 <div class="dropdown">
- <li><span>Categorie</span></li>
+<span>Categories</span>
   <div class="dropdown-content">
-  <%= link_to 'Name', new_product_path%><br>
-  <%= link_to 'Image', new_product_path%><br>
-  <%= link_to 'Description', new_product_path%><br>
-  <%= link_to 'Date', new_product_path%>
+
+    
+  <%= link_to 'Phone', phones_path%><br>
+  <%= link_to 'Watch', watches_path%><br>
+  <%= link_to 'Laptiops', laptops_path%><br>
+  
   </div>
 </div>
 
@@ -64,3 +73,4 @@
 </div>
   </body>
 </html>
+

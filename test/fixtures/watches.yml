@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  wmodel: MyString
+  image: MyString
+  dat: 2019-11-12
+
+two:
+  company: MyString
+  wmodel: MyString
+  image: MyString
+  dat: 2019-11-12

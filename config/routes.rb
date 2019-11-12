@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :laptops
+  resources :watches
+  resources :phones
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
