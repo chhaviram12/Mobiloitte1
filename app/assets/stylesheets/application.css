@@ -1,3 +1,10 @@
+
+navbar a.brand { font-size: 18px; }
+.navbar a.brand:hover {
+ color: #fff;
+ background-color: transparent;
+ text-decoration: none;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +20,11 @@
  *= require_tree .
  *= require_self
  */
+.navbar {
+  min-height: 38px;
+  background-color: #f55e55;
+}
+footer {
+  background-color: #ebebeb;
+  padding: 30px 0;
+}
