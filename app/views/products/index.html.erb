@@ -6,25 +6,38 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Image</th>
       <th>Description</th>
+      <th>Image</th>
       <th>Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @phones.each do |phone| %>
       <tr>
+        <td><%= phone.company %></td>
+        <td><%= phone.pmodel %></td>
+         <td><%= image_tag phone.image_url, width: '20%' if phone.image.present? %></td>
+        <td><%= phone.dat %></td>
+    </tr>
+     <% end %>
+
+     <% @products.each do |product| %>
+    
+           <tr>
         <td><%= product.name %></td>
-       <td><%= image_tag product.image_url, width: '50%' if product.image.present? %></td>
         <td><%= product.description %></td>
+               <td><%= image_tag product.image_url, width: '20%' if product.image.present? %></td>
+
         <td><%= product.dat %></td>
-        <td><%= link_to 'Show', product %></td>
+        <!-- <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
-    <% end %>
+      <%end%>
+  
+   
   </tbody>
 </table>
 
