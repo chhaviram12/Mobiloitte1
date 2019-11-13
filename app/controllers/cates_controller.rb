@@ -18,6 +18,8 @@ end
   # GET /cates/1
   # GET /cates/1.json
   def show
+    #binding.pry
+    @cate = Cate.find_by(id: params[:id]).product.all
   end
 
   # GET /cates/new
