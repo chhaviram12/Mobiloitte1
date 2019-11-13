@@ -17,10 +17,7 @@ end
   def index
     @products = Product.all
 
-    @phones = Phone.all
-    @watches = Watch.all
-    @laptops = Laptop.all
-  end
+      end
 
   # GET /products/1
   # GET /products/1.json
@@ -30,6 +27,7 @@ end
   # GET /products/new
   def new
     @product = Product.new
+
   end
 
   # GET /products/1/edit
@@ -39,18 +37,41 @@ end
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    #binding.pry
+   cate = Cate.find_by(productname: params["product"]["category"])
+    #binding.pry
+   a = params["product"]["category"]
+   pc = Cate.select('productname')
+   
+   for i in 0...pc.length do
+    if a == pc[i]['productname']
+      @product = cate.product.new(product_params)
 
-    respond_to do |format|
+      respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+       # else
+       #   format.html { render :new }
+       #   format.json { render json: @product.errors, status: :unprocessable_entity ,notice: 'Select Valid Category'}
+        end
       end
-    end
-  end
+         break
+     end
+
+     
+
+ end
+end
+   #@product = cate.product.new(product_params)
+
+    #@cate = Cate.new(params[:cate])
+    #@cate.product.create(params[:product])
+    
+
+
+    
+  
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json

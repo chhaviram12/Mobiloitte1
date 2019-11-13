@@ -17,17 +17,7 @@
   </thead>
 
   <tbody>
-    <% @phones.each do |phone| %>
-      <tr>
-        <td><%= phone.company %></td>
-        <td><%= phone.pmodel %></td>
-         <td><%= image_tag phone.image_url, width: '20%' if phone.image.present? %></td>
-        <td><%= phone.dat %></td>
-         <td><%= link_to 'View', phone %></td>
-        <td><%= link_to 'Update', edit_phone_path(phone) %></td>
-        <td><%= link_to 'Delete', phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-     <% end %>
+    
 
      <% @products.each do |product| %>
     
@@ -42,30 +32,7 @@
         <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
       </tr>
       <%end%>
-      <% @watches.each do |watch| %>
-      <tr>
-        <td><%= watch.company %></td>
-        <td><%= watch.wmodel %></td>
-           <td><%= image_tag watch.image_url, width: '20%' if watch.image.present? %></td>
-
-        <td><%= watch.dat %></td>
-
-         <td><%= link_to 'View', watch %></td>
-        <td><%= link_to 'Update', edit_watch_path(watch) %></td>
-        <td><%= link_to 'Delete', watch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-      <%end%>
-       <% @laptops.each do |laptop| %>
-      <tr>
-        <td><%= laptop.company %></td>
-        <td><%= laptop.processor %></td>
-       <td><%= image_tag laptop.image_url, width: '20%' if laptop.image.present? %></td>
-        <td><%= laptop.dat %></td>
-        <td><%= link_to 'View', laptop %></td>
-        <td><%= link_to 'Update', edit_laptop_path(laptop) %></td>
-        <td><%= link_to 'Delete', laptop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-   </tr>
-      <%end%>
+    
   </tbody>
 </table>
 
