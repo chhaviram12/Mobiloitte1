@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  #get 'password_resets/new'
+resources :password_resets
+
+  
   resources :laptops
   resources :watches
   resources :phones

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_104740) do
+ActiveRecord::Schema.define(version: 2019_11_13_042408) do
 
   create_table "laptops", force: :cascade do |t|
     t.string "company"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_104740) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
