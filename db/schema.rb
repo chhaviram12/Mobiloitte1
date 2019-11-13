@@ -10,38 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_11_13_055005) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string "productname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "cates", force: :cascade do |t|
     t.string "productname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-  end
-
-  create_table "laptops", force: :cascade do |t|
-    t.string "company"
-    t.string "processor"
-    t.string "image"
-    t.date "dat"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "phones", force: :cascade do |t|
-    t.string "company"
-    t.string "pmodel"
-    t.string "image"
-    t.date "dat"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -64,13 +39,5 @@ ActiveRecord::Schema.define(version: 2019_11_13_055005) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "watches", force: :cascade do |t|
-    t.string "company"
-    t.string "wmodel"
-    t.string "image"
-    t.date "dat"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ 
 end
