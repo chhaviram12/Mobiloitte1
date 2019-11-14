@@ -44,7 +44,7 @@ end
 
     respond_to do |format|
       if @cate.save
-        format.html { redirect_to @cate, notice: 'Cate was successfully created.' }
+        format.html { redirect_to @cate, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @cate }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ end
   def update
     respond_to do |format|
       if @cate.update(cate_params)
-        format.html { redirect_to @cate, notice: 'Cate was successfully updated.' }
+        format.html { redirect_to @cate, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @cate }
       else
         format.html { render :edit }
@@ -70,8 +70,10 @@ end
   # DELETE /cates/1
   # DELETE /cates/1.json
   def destroy
+    #binding.pry
     @cate.destroy
-    redirect_to 'cate_path'
+    #redirect_to 'cate_path'
+    render 'new'
     # respond_to do |format|
     #   format.html { redirect_to cates_url, notice: 'Cate was successfully destroyed.' }
     #   format.json { head :no_content }

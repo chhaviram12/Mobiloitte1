@@ -3,5 +3,5 @@ class Cate < ApplicationRecord
 
 	validates :productname, presence: true, length: { minimum:2 ,maximum: 20 }
     #validates_format_of :productname, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/
-     validates :productname, :format => { with: /\A\w+\z/, :message => 'No special characters, only letters and numbers' }
+     validates :productname, :format => { with: /\A\w+\z/, :message => 'No Special characters, only letters and numbers' }
 end

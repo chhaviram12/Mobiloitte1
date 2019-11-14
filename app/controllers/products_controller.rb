@@ -64,6 +64,7 @@ end
     #@cate.product.create(params[:product])
     
 def create
+  
   @product = Cate.find_by(id: params['categories']).product.new(product_params)
    
    respond_to do |format|
