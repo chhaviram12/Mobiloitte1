@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
-
 <h1>Products</h1>
 
 <table class="table">
@@ -32,6 +28,8 @@
         <td><%= cat.dat %></td>
         <td><%= link_to 'View', product_path(cat.id) %></td>
         <td><%= link_to 'Update', edit_product_path(cat.id) %></td>
+        <td><%= link_to 'Delete', cat, method: :delete, data: {confirm: 'Are you sure?'} %></td> 
+
         
        </tr>
       <%end%>
@@ -44,6 +42,7 @@
 
 
 
+<%= link_to 'Add Product', new_product_path %> |
 
 <%= link_to 'Edit', edit_cate_path(@cate) %> |
 <%= link_to 'Back', cates_path %>

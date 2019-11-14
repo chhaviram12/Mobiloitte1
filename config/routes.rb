@@ -10,7 +10,7 @@ resources :password_resets
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
-  resources :users
+  resources :users, except: [:index]
   get 'home/index'
   root 'home#index'
 

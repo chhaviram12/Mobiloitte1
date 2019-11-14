@@ -1,5 +1,16 @@
 class SessionsController < ApplicationController
+  before_action :check, only: [:create, :new]
   
+  def check
+    if current_user.present?
+        redirect_to root_url
+
+      # redirect_to laptops_path
+    else 
+      #redirect_to root_url
+  end
+end
+
   def new
   end
   def create

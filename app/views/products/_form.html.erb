@@ -10,33 +10,36 @@
       </ul>
     </div>
   <% end %>
+  <table>
+     <tr>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
+       <td> <%= form.label :category %> </td>
+       <td><%= select_tag "categories", options_from_collection_for_select(Cate.all, "id", "productname") %>
+       </td>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+  <tr>
+     <td><%= form.label :name %></td>
+     <td><%= form.text_field :name %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :dat %>
-    <%= form.date_select :dat %>
-  </div>
+  <tr>
+    <td><%= form.label :image %></td>
+    <td><%= form.file_field :image %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+   <tr>
+    <td><%= form.label :description %></td>
+    <td><%= form.text_field :description %></td>
+  </tr>
+
+<tr>
+  <td> <%= form.label :dat %></td>
+  <td><%= form.date_select :dat %></td>
+</tr>
+
+<tr>
+  <td>  <%= form.submit %></td>
+</tr>
 <% end %>

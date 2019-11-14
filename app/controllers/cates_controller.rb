@@ -65,10 +65,11 @@ end
   # DELETE /cates/1.json
   def destroy
     @cate.destroy
-    respond_to do |format|
-      format.html { redirect_to cates_url, notice: 'Cate was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to 'cate_path'
+    # respond_to do |format|
+    #   format.html { redirect_to cates_url, notice: 'Cate was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

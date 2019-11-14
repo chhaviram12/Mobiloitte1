@@ -22,6 +22,7 @@ end
   # GET /products/1
   # GET /products/1.json
   def show
+
   end
 
   # GET /products/new
@@ -36,39 +37,52 @@ end
 
   # POST /products
   # POST /products.json
-  def create
-    #binding.pry
-   cate = Cate.find_by(productname: params["product"]["category"])
-    #binding.pry
-   a = params["product"]["category"]
-   pc = Cate.select('productname')
+#   def create
+#     #binding.pry
+#    cate = Cate.find_by(productname: params["product"]["category"])
+#     #binding.pry
+#    a = params["product"]["category"]
+#    pc = Cate.select('productname')
    
-   for i in 0...pc.length do
-    if a == pc[i]['productname']
-      @product = cate.product.new(product_params)
+#    for i in 0...pc.length do
+#     if a == pc[i]['productname']
+#       @product = cate.product.new(product_params)
 
-      respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-       # else
-       #   format.html { render :new }
-       #   format.json { render json: @product.errors, status: :unprocessable_entity ,notice: 'Select Valid Category'}
-        end
-      end
-         break
-     end
+#       respond_to do |format|
+#       if @product.save
+#         format.html { redirect_to @product, notice: 'Product was successfully created.' }
+#         format.json { render :show, status: :created, location: @product }
+#        # else
+#        #   format.html { render :new }
+#        #   format.json { render json: @product.errors, status: :unprocessable_entity ,notice: 'Select Valid Category'}
+#         end
+#       end
+#          break
+#      end
 
      
 
- end
-end
+#  end
+# end
    #@product = cate.product.new(product_params)
 
     #@cate = Cate.new(params[:cate])
     #@cate.product.create(params[:product])
     
+def create
+  @product = Cate.find_by(id: params['categories']).product.new(product_params)
+   
+   respond_to do |format|
+      if @product.save
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.json { render :show, status: :created, location: @product }
+       else
+          format.html { render :new }
+          format.json { render json: @product.errors, status: :unprocessable_entity ,notice: 'Select Valid Category'}
+        end
+      end
 
+end
 
     
   

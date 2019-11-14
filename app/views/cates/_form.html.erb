@@ -11,12 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :productname %>
-    <%= form.text_field :productname %>
-  </div>
+<br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+<table>
+  
+  <tr>
+    <td><%= form.label :category_name %></td>
+     <td> <%= form.text_field :productname %></td>
+   </tr>
+
+  <tr>
+    <td> <%= form.submit %></td>
+  </tr>
+  
+
+</table>
+    
+
+ 
 <% end %>
