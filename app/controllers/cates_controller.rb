@@ -12,6 +12,12 @@ end
   # GET /cates
   # GET /cates.json
   def index
+    cates = Cate.select('productname')
+    products = Product.select('name')
+
+    @cc = cates.length
+    @pc = products.length
+
     @cates = Cate.all
   end
 
