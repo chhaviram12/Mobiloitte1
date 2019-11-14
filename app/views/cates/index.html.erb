@@ -1,8 +1,12 @@
-<p id="notice"><%= notice %></p>
 
+ Total number of Category  <%= @cc %> ,
+ Total number of Product  <%= @pc %>
+<hr>
 <h3>Category</h3>
-<%= link_to 'New Category', new_cate_path %> | <%= link_to 'New Product', new_product_path %><br>
 
+<p class="navbar-text float-right">
+<%= link_to 'New Category', new_cate_path %> | <%= link_to 'New Product', new_product_path %>
+</p>
 
 <table class="table">
   <thead>
