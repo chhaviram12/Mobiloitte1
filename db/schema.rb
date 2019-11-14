@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_042408) do
-
-  
+ActiveRecord::Schema.define(version: 2019_11_13_055005) do
 
   create_table "cates", force: :cascade do |t|
     t.string "productname"
@@ -20,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_11_13_042408) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
   end
-
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -41,7 +38,5 @@ ActiveRecord::Schema.define(version: 2019_11_13_042408) do
     t.datetime "password_reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
-
-  
 
 end
